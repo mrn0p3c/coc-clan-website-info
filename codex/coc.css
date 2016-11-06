@@ -1,0 +1,25 @@
+body {
+
+    background: url(SGBWP.jpg) no-repeat center center fixed; #fff;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+    background-attachment:fixed;
+
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 15px;
+  width:65%;
+}
+#footer
+{
+    width:auto;
+    height:50px;
+    clear:both;
+    background:#020202;
+}
