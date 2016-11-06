@@ -6,8 +6,8 @@
 ############################################################
 -->
 <?php
-$clantag = "#2RUVYCPG"; // clan tag harus menggunakan tanda '#'
-$token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6Ijk1NmZmMzhmLTI0MzgtNDYyNi04NTNiLWZjNWVjMDY5MmZlNCIsImlhdCI6MTQ3ODQyOTY4Miwic3ViIjoiZGV2ZWxvcGVyLzYwMTYyYTkyLTVhZDAtYTE2ZS05NGExLWIyODg4ODgyNzI0NCIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjM2Ljg1LjI0LjE4NSJdLCJ0eXBlIjoiY2xpZW50In1dfQ.nn_xB63LlHw5yM8pzfq3i7qiUbx_Lvv9QCjikW3EWVcQVPtHlnF_Uekt__43q2wM7eXL1V2FLn0JcCSUrHh2mw"; // ambil token di https://developer.clashofclans.com
+$clantag = "CLAN TAG DISINI"; // clan tag harus menggunakan tanda '#' contoh #2RUVYCPG
+$token = "TOKENNYA DISINI"; // ambil token di https://developer.clashofclans.com
 $url = "https://api.clashofclans.com/v1/clans/" . urlencode($clantag);
 $ch = curl_init($url);
 $headr = array();
