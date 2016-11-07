@@ -80,11 +80,12 @@ $members = $data["memberList"];
   </li>
   <?php
   foreach ($members as $member) {
+    $urlencd = urlencode($member["tag"]);
   ?>
   <li class="list-group-item">
     <span class="badge"><?php echo $member["role"]; ?></span>
     <?php echo $member["clanRank"]?>.
-    <img src="<?php echo $member["league"]["iconUrls"]["tiny"]; ?>" alt="<?php echo $member["league"]["name"]; ?>"/>  <?php echo "<b>".$member["name"]."</b>"  ?> | Donated: <?php echo $member["donations"]; ?> | Received: <?php echo $member["donationsReceived"]; ?> | Trophy : <b><?php echo $member["trophies"]; ?></b>
+    <img src="<?php echo $member["league"]["iconUrls"]["tiny"]; ?>" alt="<?php echo $member["league"]["name"]; ?>"/>  <a href="profil.php?tag=<?php echo $urlencd ?>"><?php echo "<b>".$member["name"]."</b>"  ?></a> | Donated: <?php echo $member["donations"]; ?> | Received: <?php echo $member["donationsReceived"]; ?> | Trophy : <b><?php echo $member["trophies"]; ?></b>
   </li>
   <?php
   }
@@ -96,3 +97,4 @@ $members = $data["memberList"];
 <br><br><br><br><br><br><br>
 </body>
 </html>
+
