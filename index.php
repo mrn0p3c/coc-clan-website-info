@@ -47,6 +47,7 @@ $members = $data["memberList"];
     exit;
   }
 ?>
+
 <div class="container-fluid">
 <br><br><br>
 <div class="row">
@@ -69,11 +70,16 @@ $members = $data["memberList"];
       <center>Clan location : <?php echo $data["location"]["name"]; ?></center>
       </div>
     </div>
+    <ul class="list-group">
+    <li class="list-group-item">
+    <i class="glyphicon glyphicon-th-list"></i> Deskripsi Clan
+    </li>
+    <li class="list-group-item">
+    <?php echo $data["description"]; ?>
+    </li>
+    </ul>
 </div>
-  <div class="col-md-9">
-  <div class="alert alert-success" role="alert"><b>Deskripsi</b><br><?php echo $data["description"]; ?></div>
-</div>
-<div class="col-md-9">
+<div class="col-md-6">
   <ul class="list-group">
   <li class="list-group-item">
     <i class="glyphicon glyphicon-th-list"></i> Clan Members
@@ -92,9 +98,59 @@ $members = $data["memberList"];
 ?>
 </ul>
 </div>
+<div class="col-md-3">
+<?php
+$clantag = "clantag"; // clan tag harus menggunakan tanda '#' contoh #2RUVYCPG
+$token = "Token"; // ambil token di https://developer.clashofclans.com
+$url = "https://api.clashofclans.com/v1/clans/" . urlencode($clantag)."/warlog?limit=5";
+$ch = curl_init($url);
+$headr = array();
+$headr[] = "Accept: application/json";
+$headr[] = "Authorization: Bearer ".$token;
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headr);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+$res = curl_exec($ch);
+$data = json_decode($res, true);
+curl_close($ch);
+$dt = $data["items"];
+?>
+  <ul class="list-group">
+  <li class="list-group-item">
+    <i class="glyphicon glyphicon-th-list"></i> War Log
+  </li>
+  <?php
+  foreach ($dt as $datanya) {
+  ?>
+  <li class="list-group-item">
+    <span class="badge"><?php echo $datanya["result"]; ?></span>
+    <font size="2"><?php echo $datanya["clan"]["name"]; ?></font>
+    <br>
+    <img src="<?php echo $datanya["clan"]["badgeUrls"]["small"]; ?>" width="32" height="32"/>
+    <i class="glyphicon glyphicon-star"><?php echo $datanya["clan"]["stars"]; ?></i>
+    <br>
+    Destruction : <?php echo $datanya["clan"]["destructionPercentage"]; ?> %
+    <br>
+    Earn : <?php echo $datanya["clan"]["expEarned"]; ?> Exp
+    <br>
+    <b>VS</b>
+    <br>
+    Destruction : <?php echo $datanya["opponent"]["destructionPercentage"]; ?> %
+    <br>
+    <img src="<?php echo $datanya["opponent"]["badgeUrls"]["small"]; ?>" width="32" height="32"/>
+    <i class="glyphicon glyphicon-star"><?php echo $datanya["opponent"]["stars"]; ?></i>
+    <br>
+    <font size="2"><?php echo $datanya["opponent"]["name"]; ?></font>
+    <br>
+  </li>
+    <?php
+  }
+?>
+</ul>
+</div>
 </div>
 </div>
 <br><br><br><br><br><br><br>
 </body>
 </html>
-
