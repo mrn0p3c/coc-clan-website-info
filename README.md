@@ -1,8 +1,8 @@
 # coc-clan-website-info
 Website untuk clan coc kalian
 
- === UPDATE 07 November 2016 ===
- update war log dan memindahkan deskripsi clan (gambarnya disini http://prntscr.com/d46u95)
+ === UPDATE 07 November 2016 ===             
+update war log dan memindahkan deskripsi clan (gambarnya disini http://prntscr.com/d46u95)
 
  === UPDATE 07 November 2016 ===             
 Add profile.php (jadi kalian bisa melihat detail akun dari members clan)
