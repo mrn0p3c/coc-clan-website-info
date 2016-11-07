@@ -1,6 +1,10 @@
 # coc-clan-website-info
 Website untuk clan coc kalian
 
+UPDATE 07 November 2016             
+Add profile.php (jadi kalian bisa melihat detail akun dari members clan)
+lihat gambarnya http://prntscr.com/d43vlt
+
 Untuk mengambil token silahkan ikuti langkah dibawah ini
 
 1. pergi ke https://developer.clashofclans.com
